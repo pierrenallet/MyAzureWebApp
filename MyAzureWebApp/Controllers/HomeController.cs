@@ -10,6 +10,7 @@ namespace MyAzureWebApp.Controllers
 {
     public class HomeController : Controller
     {
+        aoeuscg.priscg oeuidsh o.peinshtaouesnth
         public ActionResult Index()
         {
             var account = CloudStorageAccount.Parse(@"DefaultEndpointsProtocol=https;AccountName=pierrestoragetest;AccountKey=8OBdp85+f+p3zZOJEqPKeO7BUCV42gJ7MqUhiWCpYheOnlr92Ag3SatcrALHmRPg2LvsKXbWYqv7J/x3dRbJTQ==;EndpointSuffix=core.windows.net");
