@@ -1,0 +1,25 @@
+﻿@model List< Microsoft.WindowsAzure.Storage.Blob.CloudBlockBlob>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+<div class="jumbotron">
+    <h1>ASP.NET</h1>
+    <div>STAGING HARD CODED IN HTML</div>
+    <div>@System.Configuration.ConfigurationManager.AppSettings["mode"]</div>
+</div>
+<div>
+    @foreach(var blob in Model)
+    {
+        var sas = blob.GetSharedAccessSignature(new Microsoft.WindowsAzure.Storage.Blob.SharedAccessBlobPolicy
+        {
+            SharedAccessStartTime = DateTime.Now,
+            SharedAccessExpiryTime = DateTime.Now.AddSeconds(5),
+            Permissions = Microsoft.WindowsAzure.Storage.Blob.SharedAccessBlobPermissions.Read
+
+        });
+        <img height="50" width="70" src="@(blob.Uri + sas)"/>
+    }
+</div>
+
